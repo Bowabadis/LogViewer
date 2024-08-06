@@ -1,0 +1,128 @@
+/* .root{
+    --deepblue: #000028;
+    --siemenspetrol: #009999;
+    --lightsand: #F3F3F0;
+} */
+.button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+}
+.button:hover{
+    -fx-background-color: rgba(255, 255, 255, 0.17);
+    -fx-background-radius: 10px;
+}
+.button:pressed{
+    -fx-background-color: rgba(255, 255, 255, 0.17);
+    -fx-background-radius: 10px;
+}
+.toggle-button{
+    -fx-background-color: transparent;
+    -fx-background-radius: 0px;
+}
+.toggle-button:hover{
+    -fx-background-color: rgba(255, 255, 255, 0.17);
+    -fx-background-radius: 10px;
+}
+.toggle-button:selected{
+    -fx-background-color: #009999;
+    -fx-background-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-border-color: white;
+    -fx-border-radius: 10px;
+}
+/* .button:focused{
+    -fx-background-color: #00b6b6;
+    -fx-border-color: #00b6b6;
+    -fx-background-radius: 5px;
+} */
+.text-field {
+    /* -fx-background-color: -fx-text-box-border, -fx-background ;
+    -fx-background-insets: 0, 0 0 1 0 ;
+    -fx-background-radius: 0 ; */
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: transparent;
+}
+.text-field:focused {
+    -fx-border-color: white;
+    -fx-border-width: 0 0 1 0;
+    -fx-background-color: rgba(255, 255, 255, 0.074);
+}
+
+
+.chart-plot-background {
+    -fx-background-color: transparent;
+}
+.chart{
+    -fx-text-fill: white;
+}
+.chart-title{
+    -fx-text-fill: white;
+}
+.chart-symbol{
+    -fx-text-fill: white;
+}
+.chart-legend{
+    -fx-background-color: transparent;
+    -fx-text-fill: transparent;
+}
+.chart-legend-item-symbol{
+    -fx-background-color: transparent;
+}
+.chart-legend-item{
+    -fx-text-fill: transparent;
+}
+.axis-label {
+    -fx-text-fill: white;
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: #009999;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke: #009999;
+}
+.chart-series-line{
+    -fx-stroke-width: 2px;
+    -fx-effect: null;
+}
+.default-color0.chart-series-line { -fx-stroke: #F3F3F0; }
+
+.button-access{
+    -fx-border-color: #009999;
+    -fx-border-width: 2px;
+}
+.button-access:hover{
+    -fx-background-color: #0099995d;
+}
+.button-access:selection{
+    -fx-background-color: #009999;
+}
+.scroll-pane{
+    -fx-background-color: transparent;
+}
+.scroll-bar:vertical, .scroll-bar:horizontal{
+    -fx-background-color: transparent;
+}
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb{
+    -fx-background-color: white;
+    -fx-background-radius: 5em;
+}
+.viewport{
+    -fx-background-color: transparent;
+}
+.increment-arrow, .decrement-arrow{
+    -fx-background-color: transparent;
+    -fx-fill: transparent;
+}
+.increment-button, .decrement-button{
+    -fx-background-color: transparent;
+    -fx-fill: transparent;
+}
+.transparent{
+    -fx-background-color: transparent;
+    -fx-fill: transparent;
+    -fx-text-fill: transparent;
+}
+
+

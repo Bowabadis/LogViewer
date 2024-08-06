@@ -1,0 +1,17 @@
+Version: 8/6/2024 1.1
+
+User Log Dashboard for displaying information on user data
+
+This project was created with java and javaFX for UI and file management. XML file conversion involves using the javax.xml utility class.
+
+The main class is the Viewer.java class, so run that to get the program working. All files that have to do with converting the text to data objects are in the ReaderFiles package, all the UI and controllers are in the parent folder (I would've loved to have them in a seperate package but couldn't quite figure out how to refoactor it). 
+1) The viewer class launched the main.fxml file which has the associated MainController.java as its controller. 
+2) Once a user selects a proper log file, the document reader class reads the file line by line and converts the text String of each line into data objects
+3) The MainController then accesses the UserCollection class which stores an array of all the different Users, taking this information and displaying a graph and a list of all the users
+4) The ExtraInfoHolderController class displays the text file of all the individual log occurences on the right
+5) After accessing a file name and location for the Viewer class, data is converted and exported into a .xml file using javax.xml
+
+To help create the fxml files I used Scene Builder which was very helpful. The build was exported to a .jar file using VSCode. From there it was converted to an executible using a program called Launch4j. I've attached my xml file for my export settings (logInfoApp.xml). With the executible I have a JRE with it so others don't have to download java just to get it running. If the JRE is too large to easily send then setting the JRE path to %JAVA_HOME%;%PATH% access the system JRE, so java would need to be installed on the device. 
+
+Any questions please feel free to contact me:
+https://www.linkedin.com/in/bode-cooper/
