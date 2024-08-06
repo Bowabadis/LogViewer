@@ -1,0 +1,29 @@
+<!-- These are the configurations for the Launch4j application to convert .jar to .exe-->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\z004zeam\Downloads\Log App JRE\Login Info.jar</jar>
+  <outfile>C:\Users\z004zeam\Downloads\Log App JRE\logApp.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl></downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>true</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\z004zeam\VSCode Projects\Login Info\Icons\siemensIcon.ico</icon>
+  <classPath>
+    <mainClass>Viewer</mainClass>
+  </classPath>
+  <jre>
+    <path>jre</path>
+    <requiresJdk>false</requiresJdk>
+    <requires64Bit>false</requires64Bit>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
+  </jre>
+</launch4jConfig>
