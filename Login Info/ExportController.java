@@ -14,7 +14,7 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import javax.xml.transform.stream.StreamSource;
-import org.w3c.dom.Document;
+import org.w3c.dom.*;
 
 import ReaderFiles.User;
 import ReaderFiles.UserCollection;
@@ -24,6 +24,7 @@ import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
 
@@ -38,6 +39,9 @@ public class ExportController implements Initializable {
 
     @FXML
     private CheckBox cBoxTemplate;
+
+    @FXML
+    private Label lblOutput;
     
     @FXML
     private VBox vUserHolder;
@@ -103,15 +107,16 @@ public class ExportController implements Initializable {
                   Document document = builder.parse(selectedFile); 
         
                   //uses a StreamSource (XSLT file) to take the xml data and format it to csv
-                  StreamSource stylesource = new StreamSource("ReaderFiles\\style.xsl"); 
+                  StreamSource stylesource = new StreamSource(getClass().getResourceAsStream("style.xsl")); 
                   Transformer transformer = TransformerFactory.newInstance().newTransformer(stylesource); 
-                  Source source = new DOMSource((org.w3c.dom.Node) document); 
+                  Source source = new DOMSource(document); 
                   StreamResult outputTarget = new StreamResult(selectedFile); 
                   transformer.transform(source, outputTarget);
             }
             System.out.println("--EXPORT COMPLETE--");
+            lblOutput.setText("EXPORT COMPLETE");
         }catch(Exception e){
-            e.printStackTrace();
+            lblOutput.setText(e.getMessage());
         }
         
     }
