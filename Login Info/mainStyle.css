@@ -91,6 +91,7 @@
 .button-access{
     -fx-border-color: #009999;
     -fx-border-width: 2px;
+    -fx-border-radius: 5px;
 }
 .button-access:hover{
     -fx-background-color: #0099995d;
@@ -99,6 +100,9 @@
     -fx-background-color: #009999;
 }
 .scroll-pane{
+    -fx-background-color: transparent;
+}
+.scroll-pane > .corner{
     -fx-background-color: transparent;
 }
 .scroll-bar:vertical, .scroll-bar:horizontal{
@@ -124,5 +128,30 @@
     -fx-fill: transparent;
     -fx-text-fill: transparent;
 }
+.button-export{
+    -fx-background-color:  #009999;
+    -fx-background-radius:  10px;
+}
+.button-export:hover{
+    -fx-background-color:  #00acac;
+} 
+
+.choice-box{
+    -fx-background-color: #009999;
+    -fx-mark-color: white;
+}
+.choice-box > .label{
+    -fx-text-fill: white;
+}
+.choice-box .context-menu{
+    -fx-background-color: white;
+}
+.choice-box .menu-item:focused {
+    -fx-background-color: #00acac;
+}
+.choice-box .menu-item > .label {
+    -fx-text-fill: black;
+}
+
 
 
