@@ -90,6 +90,15 @@
                         <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                      </VBox.margin>
                   </ChoiceBox>
+                  <ScrollPane prefHeight="200.0" prefWidth="200.0">
+                    <content>
+                      <AnchorPane prefHeight="42.0" prefWidth="35.0">
+                           <children>
+                              <Label fx:id="lblOutput" layoutX="7.0" layoutY="29.0" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
                   <HBox alignment="BOTTOM_RIGHT" prefHeight="190.0" prefWidth="140.0">
                      <children>
                         <Button fx:id="btnExport" alignment="CENTER" mnemonicParsing="false" onAction="#exportUsers" prefHeight="28.0" prefWidth="200.0" style="-fx-background-color: #009999; -fx-background-radius: 10px;" stylesheets="@mainStyle.css" text="Export" textFill="WHITE">
