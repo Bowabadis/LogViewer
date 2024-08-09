@@ -4,11 +4,11 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.scene.transform.Scale;
 import javafx.stage.FileChooser;
+import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.List;
-import javafx.stage.FileChooser.*;
 
 import javafx.application.*;
 import javafx.beans.value.ChangeListener;
@@ -28,6 +28,7 @@ public class Viewer extends Application {
             final double ratio = initWidth/initHeight;
             final Pane root = new Pane();
             
+        
             //Controller pane created for resizing
             Pane controllerPane = FXMLLoader.load(getClass().getResource("main.fxml"));
             controllerPane.setPrefWidth(initWidth);
@@ -43,8 +44,8 @@ public class Viewer extends Application {
             //Main Window Configs
             Image icon = new Image("https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/mky0fkibqswnxfbvhk3i");
             stage.getIcons().add(icon);
-            stage.setMinWidth(initWidth+10);
-            stage.setMinHeight(initHeight+70);
+            stage.setMinWidth(initWidth+20);
+            stage.setMinHeight(initHeight+80);
             stage.setTitle("Log Info Viewer");
             stage.setScene(scene);
             stage.show();
@@ -75,10 +76,10 @@ public class Viewer extends Application {
         return files;
     }
     //Popup Selector for exporting
-    public static File exportFile(){
+    public static File exportFile(String fileExtension){
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setTitle("Export XML File");
-        ExtensionFilter extensionFilter = new ExtensionFilter(".xml", "*.xml");
+        fileChooser.setTitle("Export "+fileExtension.toUpperCase()+" File");
+        ExtensionFilter extensionFilter = new ExtensionFilter(fileExtension, "*"+fileExtension);
         fileChooser.getExtensionFilters().add(extensionFilter);
         File file = fileChooser.showSaveDialog(stage);
         return file;

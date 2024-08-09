@@ -11,8 +11,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.ResourceBundle;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.Marshaller;
 
 import ReaderFiles.DocumentReader;
 import ReaderFiles.User;
@@ -22,13 +20,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.*;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 
 //Associated With main.fxml as the controller
@@ -42,6 +43,9 @@ public class MainController implements Initializable {
 
     @FXML
     private Button btnUpdate;
+    
+    @FXML
+    private Button btnExport;
 
     @FXML
     private Button btnViewTotal;
@@ -86,6 +90,7 @@ public class MainController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         viewTotalGraph();
+
     }
 
     //Called when valid log file is uploaded
@@ -257,19 +262,28 @@ public class MainController implements Initializable {
         }
         start();
     }
+    //opens a new export window to configure export options
     public void exportData(){
-        System.out.println("Exporting Data...");
-        try{
-            JAXBContext jaxbContext = JAXBContext.newInstance(UserCollection.class);
-        
-        Marshaller marshaller = jaxbContext.createMarshaller();
-        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-
-        marshaller.marshal(userCollection, Viewer.exportFile());
-
-        System.out.println("--EXPORT COMPLETE--");
-        }catch(Exception e){
+        if(userCollection == null) return;
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("export.fxml"));
+            Parent root = loader.load();
+            ExportController controller = loader.getController();
+            controller.load(userCollection);
+            
+            Scene scene = new Scene(root);
+            Stage newStage = new Stage();
+            newStage.setTitle("Export Data");
+            Image icon = new Image("https://images.crunchbase.com/image/upload/c_pad,h_256,w_256,f_auto,q_auto:eco,dpr_1/mky0fkibqswnxfbvhk3i");
+            newStage.getIcons().add(icon);
+            newStage.setResizable(false);
+            newStage.setScene(scene);
+            newStage.show();
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
+    
 }
